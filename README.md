@@ -16,6 +16,9 @@ password: admin123
 email: user@gmail.com
 password: user123
 
+emai: user1@gmail.com
+password: user1234
+
 # Approach #
 After reading the task details, i recognized that it is similar like google form, admin can create form & user can add response. I have like the concept of project, where admin can add fields as per their requirement.
 
