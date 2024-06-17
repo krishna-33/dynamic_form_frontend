@@ -34,10 +34,20 @@ const columns = [
 ];
 const Row = ({ row, handleNavigate, loggedInUser }) => {
   const [isOpen, setISOpen] = useState(false);
-  const responses = row.responses.map(({ user, updatedAt, ...obj }) => ({
+  let responses = row.responses.map(({ user, updatedAt, ...obj }) => ({
     name: `${user?.fname} ${user?.lname}`,
     response: { ...obj },
   }));
+  responses = responses.map(({ response, ...obj }) => {
+
+    const transformedResponse = response.response.map((i) => ({
+        question: i.question,
+        answer: i.answer
+    }));
+
+    return { ...obj, response: transformedResponse };
+});
+
   return (
     <>
       <TableRow
